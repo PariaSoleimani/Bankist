@@ -169,10 +169,10 @@ const calcDisplaySummary = function (account) {
 
 // SHOWING BALANCE
 const calcDisplayBalance = function (account) {
-  const balance = account.movements.reduce(function (acc, movement) {
+  account.balance = account.movements.reduce(function (acc, movement) {
     return acc + movement;
   }, 0);
-  labelBalance.textContent = `${balance}€`;
+  labelBalance.textContent = `${account.balance}€`;
 };
 
 // UPDATING INFO
