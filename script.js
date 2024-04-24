@@ -102,7 +102,7 @@ const formatMovementDate = function (date) {
   const calcDaysPassed = (date1, date2) => Math.abs(date2 - date1) / (1000 * 60 * 60 * 24);
   const daysPassed = Math.round(calcDaysPassed(new Date(), date));
   const day = date.getDate();
-  const month = date.getMonth();
+  const month = date.getMonth() + 1;
   const year = date.getFullYear();
   if (daysPassed === 0) return 'today';
   else if (daysPassed === 1) return 'yesterday';
@@ -199,7 +199,7 @@ btnLogin.addEventListener('click', function (event) {
     updateUI(currentAccount);
     const loginDate = new Date();
     const day = loginDate.getDate();
-    const month = loginDate.getMonth();
+    const month = loginDate.getMonth() + 1;
     const year = loginDate.getFullYear();
     const displayDate = `${day}/${month}/${year}`;
     labelDate.textContent = displayDate;
